@@ -174,23 +174,19 @@ while place_order:
                 # Keep ordering
                 case 'y':
                     place_order = True
+                # Exit the keep ordering question loop
                     break
+                # Complete the order
                 case 'n':
                     place_order = False
-                    break
-                case _:
-                    print("This is not a valid response. please try again. ")
-                # Exit the keep ordering question loop
-            
-                # Complete the order
-                
                 # Since the customer decided to stop ordering, thank them for
                 # their order
                     print("Thank you for your order! ")
                 # Exit the keep ordering question loop
                     break
                 # Tell the customer to try again
-                
+                case _:
+                    print("This is not a valid response. please try again. ")
 # Print out the customer's order
     print("This is what we are preparing for you.\n")
 
@@ -210,7 +206,7 @@ for customer_order in order:
 
     # 8. Calculate the number of spaces for formatted printing
     item_spaces = 26 - len(item_name)
-    price_spaces = 10 - len(f"{price:.2f}")
+    price_spaces = 6 - len(f"{price:.2f}")
     quantity_spaces = 10 - len(str(quantity))
 
     # 9. Create space strings
