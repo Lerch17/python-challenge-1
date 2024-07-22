@@ -67,7 +67,7 @@ while place_order:
     # Create a variable for the menu item number
     i = 1
     # Create a dictionary to store the menu for later retrieval
-    menu_items = []
+    menu_items = {}
 
     # Print the options to choose from menu headings (all the first level
     # dictionary items in menu).
@@ -135,7 +135,7 @@ while place_order:
                     item_price = item_ordered["Price"]
 
                     # Ask the customer for the quantity of the menu item
-                    quantity = input(f"What amount of {item_ordered['Item name']} would you like to order? ")
+                    quantity = input(f"What amount of {item_name} would you like to order? ")
 
                     # Check if the quantity is a number, default to 1 if not
                     if quantity.isdigit(): 
@@ -143,12 +143,12 @@ while place_order:
                         
                     # Add the item name, price, and quantity to the order list   
                         current_order = {
-                            "Item_name": item_ordered,
+                            "Item name": item_name, 
                             "Price": item_price,
                             "Quantity": quantity
                         }
                         order.append(current_order)
-                        print(f"You have ordered {quantity} of {item_ordered}. ")
+                        print(f"You have ordered {quantity} of {item_name}. ")
 
                     # Tell the customer that their input isn't valid
                     else:
@@ -204,7 +204,7 @@ print("--------------------------|--------|----------")
 for customer_order in order:
 
     # 7. Store the dictionary items as variables
-    item_name = customer_order["Item_name"]
+    item_name = customer_order["Item name"]
     price = customer_order["Price"]
     quantity = customer_order["Quantity"]
 
